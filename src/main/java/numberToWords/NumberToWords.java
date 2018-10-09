@@ -9,8 +9,8 @@ public class NumberToWords {
     public static final Map<String, String> textLevel;
 
     static {
-        Hashtable<String, String> tmpDigital =
-                new Hashtable<String, String>();
+        Map<String, String> tmpDigital =
+                new HashMap<String, String>();
         tmpDigital.put("1", "один");
         tmpDigital.put("-1", "одна");
         tmpDigital.put("2", "два");
@@ -50,8 +50,8 @@ public class NumberToWords {
         tmpDigital.put("800", "восемьсот");
         tmpDigital.put("900", "девятьсот");
 
-        Hashtable<String, String> tmpLevel =
-                new Hashtable<String, String>();
+        Map<String, String> tmpLevel =
+                new HashMap<String, String>();
         tmpLevel.put("11", "тысяча");
         tmpLevel.put("12", "тысячи");
         tmpLevel.put("15", "тысяч");

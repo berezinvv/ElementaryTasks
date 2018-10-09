@@ -34,24 +34,20 @@ public class Main {
             }
 
             if (firstEnvelope != null && secondEnvelope != null) {
-                if ((firstEnvelope.getWidth() < secondEnvelope.getWidth() || firstEnvelope.getWidth() < secondEnvelope.getHeight())
-                        &&(firstEnvelope.getHeight() < secondEnvelope.getWidth() || firstEnvelope.getHeight() < secondEnvelope.getHeight())){
-                    System.out.println("The second envelope is placed in the first envelope");
-                }else if ((secondEnvelope.getWidth() < firstEnvelope.getWidth() || secondEnvelope.getWidth() < firstEnvelope.getHeight())
-                        &&(secondEnvelope.getHeight() < firstEnvelope.getWidth() || secondEnvelope.getHeight() < firstEnvelope.getHeight())){
-                    System.out.println("The first envelope is placed in the second envelope");
+                if (Envelope.compareEnvelope(firstEnvelope, secondEnvelope)){
+                    System.out.println("The envelope is placed in the another envelope");
                 }
                 else {
                     System.out.println("The envelope does not fit another envelope");
                 }
-            }else {
+            } else {
                 System.out.println("invalid parameters");
             }
 
             System.out.println("Do you want to continue(y/yes)?");
             answer = scanner.next().toLowerCase();
 
-            keepOn = (answer.equals("y") || answer.equals("yes"))?true:false;
+            keepOn = (answer.equals("y") || answer.equals("yes")) ? true : false;
         } while (keepOn);
         scanner.close();
     }

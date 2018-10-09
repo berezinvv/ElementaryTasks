@@ -14,12 +14,9 @@ public class Main {
     }
 
     public static String fibonacciRange(long lower, long upper) {
-        long curr = 1, prev = 1;
+        long curr = 1, prev = 0;
         String str = "";
 
-        if (upper < 2) {
-            return str;
-        }
 
         while (curr <= upper) {
             long temp = curr;

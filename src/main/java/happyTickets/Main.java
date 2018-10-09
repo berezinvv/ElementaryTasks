@@ -14,12 +14,12 @@ public class Main {
         String path = scanner.nextLine();
 
         String method = readFile(path);
-        System.out.println(method);
+        System.out.println("Method: " + method);
 
         if (method.equals("Moskow")) {
-            System.out.println(CountHappyTicketsMoskow());
+            System.out.println("Count of happy tickets:" + CountHappyTicketsMoskow());
         } else if (method.equals("Piter")) {
-            System.out.println(CountHappyTicketsPiter());
+            System.out.println("Count of happy tickets:" + CountHappyTicketsPiter());
         } else {
             System.out.println("not found method");
         }
@@ -44,7 +44,7 @@ public class Main {
 
     public static int CountHappyTicketsMoskow() {
         int count = 0;
-        for (int ticket = 1; ticket < 1000000; ticket++) {
+        for (int ticket = 1001; ticket < 1000000; ticket++) {
             if (ticket / 100000 + (ticket / 10000) % 10 + (ticket / 1000) % 10 == (ticket / 100) % 10 + (ticket / 10) % 10 + ticket % 10) {
                 count = count + 1;
             }
@@ -57,7 +57,7 @@ public class Main {
         int evenNumber = 0;
         int oddNumber = 0;
         int curr = 0;
-        for (int ticket = 1; ticket < 1000000; ticket++) {
+        for (int ticket = 112; ticket < 1000000; ticket++) {
             evenNumber = 0;
             oddNumber = 0;
             for (int i = 1; i <= 100000; i *= 10) {
