@@ -4,8 +4,12 @@ public class ChessBoard {
     static public void printChessBoard(int width, int height) {
         String str = "";
 
-        for (int i = 0; i < width / 2; i++) {
-            str += "* ";
+        for (int i = 0; i < width; i++) {
+            if (i % 2 == 0) {
+                str += "*";
+            } else {
+                str += " ";
+            }
         }
 
         for (int i = 0; i < height; i++) {
