@@ -17,10 +17,10 @@ public class Envelope {
         return height;
     }
 
-    public static boolean compareEnvelope(Envelope first, Envelope second) {
+    public boolean isFitIntoOther(Envelope second) {
 
-        if ((second.getWidth() <= first.getWidth() && second.getHeight() <= first.getHeight()) || (second.getWidth() > first.getWidth() &&
-                first.getHeight() >= (2 * first.getHeight() * second.getHeight() * first.getWidth() + (Math.pow(first.getHeight(), 2) - Math.pow(second.getHeight(), 2)) * Math.sqrt(Math.pow(first.getHeight(), 2) + Math.pow(second.getHeight(), 2) - Math.pow(first.getWidth(), 2))) / (Math.pow(second.getWidth(), 2) + Math.pow(second.getHeight(), 2)))) {
+        if ((second.getWidth() <= this.getWidth() && second.getHeight() <= this.getHeight()) || (second.getWidth() > this.getWidth() &&
+                this.getHeight() >= (2 * this.getHeight() * second.getHeight() * this.getWidth() + (Math.pow(this.getHeight(), 2) - Math.pow(second.getHeight(), 2)) * Math.sqrt(Math.pow(this.getHeight(), 2) + Math.pow(second.getHeight(), 2) - Math.pow(this.getWidth(), 2))) / (Math.pow(second.getWidth(), 2) + Math.pow(second.getHeight(), 2)))) {
             return true;
         }
         return false;

@@ -34,7 +34,7 @@ public class Main {
             }
 
             if (firstEnvelope != null && secondEnvelope != null) {
-                if (Envelope.compareEnvelope(firstEnvelope, secondEnvelope)){
+                if (firstEnvelope.isFitIntoOther(secondEnvelope)){
                     System.out.println("The envelope is placed in the another envelope");
                 }
                 else {
