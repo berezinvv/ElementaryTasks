@@ -7,15 +7,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        double a = 0;
-        double b = 0;
+        int a = 0;
+        int b = 0;
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.println("Enter the number:");
-            a = scanner.nextDouble();
+            a = scanner.nextInt();
 
             System.out.println("Enter the number power:");
-            b = scanner.nextDouble();
+            b = scanner.nextInt();
 
             System.out.println(extentNew(a, b));
 
@@ -23,13 +23,17 @@ public class Main {
             System.out.println("invalid parameters");
         }
 
-}
+    }
 
-    public static double extentNew(double a, double b) {
+    public static double extentNew(int a, int b) {
 
         double res = 1;
 
-        for (int i = 0; i < b; ) {
+        if (a == 0) {
+            return 0;
+        }
+
+        for (int i = 0; i < Math.abs(b); ) {
             if (i == 0 || i == 1) {
                 res *= a;
                 i++;
@@ -41,6 +45,6 @@ public class Main {
                 i++;
             }
         }
-        return res;
+        return (b > 0) ? res : 1 / res;
     }
 }
