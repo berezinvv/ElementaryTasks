@@ -7,10 +7,18 @@ public class TicketServise {
 
     public static int CountHappyTicketsMoskow() {
         int count = 0;
-        for (int ticket = 1001; ticket < 1000000; ticket++) {
-            if (ticket / 100000 + (ticket / 10000) % 10 + (ticket / 1000) % 10 == (ticket / 100) % 10 + (ticket / 10) % 10 + ticket % 10) {
-                count = count + 1;
+        for (int i = 1; i <= 27/*9+9+9 first half of the ticket */; i++) {
+            for (int a = 1; a <= 9; a++) {
+                for (int b = 1; b <= 9; b++) {
+                    for (int c = 1; c <= 9; c++) {
+                        int sum = a + b + c;
+                        if (sum == i) {
+                            count++;
+                        }
+                    }
+                }
             }
+
         }
         return count;
     }
