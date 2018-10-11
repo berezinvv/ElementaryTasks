@@ -1,6 +1,7 @@
 package envelopeAnalysis;
 
 public class Envelope {
+
     private double width;
     private double height;
 

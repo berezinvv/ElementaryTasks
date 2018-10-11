@@ -11,16 +11,16 @@ public class Main {
         int b = 0;
         Scanner scanner = new Scanner(System.in);
         try {
-            System.out.println("Enter the number:");
+            printToConcole("Enter the number:");
             a = scanner.nextInt();
 
-            System.out.println("Enter the number power:");
+            printToConcole("Enter the number power:");
             b = scanner.nextInt();
 
-            System.out.println(extentNew(a, b));
+            printToConcole(extentNew(a, b));
 
         } catch (NumberFormatException | InputMismatchException ex) {
-            System.out.println("invalid parameters");
+            printToConcole("invalid parameters");
         }
 
     }
@@ -46,5 +46,13 @@ public class Main {
             }
         }
         return (b > 0) ? res : 1 / res;
+    }
+
+    public static void printToConcole(String message){
+        System.out.println(message);
+    }
+
+    public static void printToConcole(double value){
+        System.out.println(value);
     }
 }

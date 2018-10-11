@@ -14,37 +14,36 @@ public class Main {
 
             try {
                 //first envelope
-                System.out.println("Enter the width of the first envelope:");
+                View.printToConcole("Enter the width of the first envelope:");
                 width = scanner.nextDouble();
-                System.out.println("Enter the height of the first envelope:");
+                View.printToConcole("Enter the height of the first envelope:");
                 height = scanner.nextDouble();
 
                 firstEnvelope = new Envelope(width, height);
 
                 //second envelope
-                System.out.println("Enter the width of the second envelope:");
+                View.printToConcole("Enter the width of the second envelope:");
                 width = scanner.nextDouble();
-                System.out.println("Enter the height of the second envelope:");
+                View.printToConcole("Enter the height of the second envelope:");
                 height = scanner.nextDouble();
 
                 secondEnvelope = new Envelope(width, height);
 
             } catch (NumberFormatException ex) {
-                System.out.println("invalid parameters");
+                View.printToConcole("invalid parameters");
             }
 
             if (firstEnvelope != null && secondEnvelope != null) {
-                if (firstEnvelope.isFitIntoOther(secondEnvelope)){
-                    System.out.println("The envelope is placed in the another envelope");
-                }
-                else {
-                    System.out.println("The envelope does not fit another envelope");
+                if (firstEnvelope.isFitIntoOther(secondEnvelope)) {
+                    View.printToConcole("The envelope is placed in the another envelope");
+                } else {
+                    View.printToConcole("The envelope does not fit another envelope");
                 }
             } else {
-                System.out.println("invalid parameters");
+                View.printToConcole("invalid parameters");
             }
 
-            System.out.println("Do you want to continue(y/yes)?");
+            View.printToConcole("Do you want to continue(y/yes)?");
             answer = scanner.next().toLowerCase();
 
             keepOn = (answer.equals("y") || answer.equals("yes")) ? true : false;

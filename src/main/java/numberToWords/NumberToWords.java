@@ -5,6 +5,8 @@ import java.util.*;
 
 public class NumberToWords {
 
+    public static final String MESSAGE_INFO = "usage: [<number>]\n" +
+            "\tnumber - integer\n";
     public static final Map<String, String> textDigital;
     public static final Map<String, String> textLevel;
 

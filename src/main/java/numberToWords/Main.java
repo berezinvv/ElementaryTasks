@@ -2,17 +2,19 @@ package numberToWords;
 
 import java.math.BigDecimal;
 
+import static numberToWords.NumberToWords.MESSAGE_INFO;
+
 public class Main {
     public static void main(String[] args) {
         if (args.length >= 1) {
             try {
-                System.out.println(args[0] + " = " + NumberToWords.getNumberToWords(new BigDecimal(args[0])));
-            }catch (NumberFormatException ex){
-                System.out.println("invalid parameter");
+                View.printToConcole(args[0] + " = " + NumberToWords.getNumberToWords(new BigDecimal(args[0])));
+            } catch (NumberFormatException ex) {
+                View.printToConcole("invalid parameter\n" + MESSAGE_INFO);
             }
 
         } else {
-            System.out.println("invalid parameter");
+            View.printToConcole("invalid parameter\n" + MESSAGE_INFO);
         }
     }
 }

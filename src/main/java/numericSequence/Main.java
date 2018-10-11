@@ -1,29 +1,37 @@
 package numericSequence;
 
 public class Main {
+
+    public static final String MESSAGE_INFO = "usage: [<number>]\n" +
+            "\tnumber - value (integer)\n";
+
     public static void main(String[] args) {
         if (args.length >= 1) {
             try {
-                System.out.println(printNumericSequence(Double.parseDouble(args[0])));
+                printToConcole(getNumericSequence(Integer.parseInt(args[0])));
             } catch (NumberFormatException ex) {
-                System.out.println("invalid parameters");
+                printToConcole("invalid parameters\n" + MESSAGE_INFO);
             }
         } else {
-            System.out.println("invalid parameter");
+            printToConcole("invalid parameter\n" + MESSAGE_INFO);
         }
     }
 
-    public static String printNumericSequence(double max) {
-        String str = "";
+    public static String getNumericSequence(int max) {
+        StringBuilder strBuilder = new StringBuilder();
         int number = 0;
         double numberInDegree = 0;
         while (numberInDegree < max) {
             number++;
             numberInDegree = Math.pow(number, 2);
             if (numberInDegree <= max) {
-                str += number + ",";
+                strBuilder.append(number + ",");
             }
         }
-        return str.substring(0, str.length() - 1);
+        return strBuilder.substring(0, strBuilder.length() - 1);
+    }
+
+    public static void printToConcole(String message){
+        System.out.println(message);
     }
 }

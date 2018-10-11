@@ -10,8 +10,14 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FileService {
-    public static int countPoints(String path, String substring) {
-        int count = 0;
+
+    public static final String MESSAGE_INFO = "usage: [<path> <substring> <replaceWith>]\n" +
+            "\tpath         - path to the file\n" +
+            "\tsubstring    - search string\n" +
+            "\treplaceWith  - substitution string\n";
+
+    public static long countPoints(String path, String substring) {
+        long count = 0;
         Path pathFile = Paths.get(path);
 
         try {
@@ -21,7 +27,7 @@ public class FileService {
                 count += line.split(substring, -1).length-1;
             }
         } catch (IOException e) {
-            System.out.println("invalid parameters");
+            View.printToConcole("invalid parameters\n" + MESSAGE_INFO);
         }
 
         return count;
@@ -34,7 +40,7 @@ public class FileService {
                     .collect(Collectors.toList());
             Files.write(Paths.get(path), replaced);
         } catch (IOException e) {
-            System.out.println("invalid parameters");
+            View.printToConcole("invalid parameters\n" + MESSAGE_INFO);
         }
     }
 }
