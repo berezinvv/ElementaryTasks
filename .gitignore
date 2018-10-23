@@ -1,4 +1,7 @@
 target/
+binary/
+json/
+xml/
 
 .idea/
 *.iml
