@@ -2,8 +2,8 @@ package com.ssitacademy.berezinvv.sortTriangle;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class TriangleTest {
     Triangle triangleFirst = new Triangle("First", 5, 5, 5);
@@ -11,13 +11,15 @@ class TriangleTest {
     Triangle triangleThirt = new Triangle("First", 6, 6, 6);
 
     @Test
-    void compareToPositive() {
-        assertTrue(triangleFirst.compareTo(triangleSecond) == 0);
+    void compareToPositiveTest() {
+        int expected = 0;
+        assertEquals(expected, triangleFirst.compareTo(triangleSecond));
     }
 
     @Test
-    void compareToNegative() {
-        assertFalse(triangleFirst.compareTo(triangleThirt) == 0);
+    void compareToNegativeTest() {
+        int expected = 0;
+        assertNotEquals(expected, triangleFirst.compareTo(triangleThirt));
     }
 
 }

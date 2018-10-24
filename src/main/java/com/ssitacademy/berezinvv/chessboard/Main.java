@@ -6,7 +6,7 @@ import com.ssitacademy.berezinvv.validator.IntValidation;
 public class Main {
     public static void main(String[] args) {
 
-        if (InputValidator.isContainsCountParametersArray(args, 2)) {
+        if (InputValidator.isContainsCountParametersOfArray(args, 2)) {
             IntValidation paramWidth = InputValidator.getInt(args[0],
                     "First parameter ");
             IntValidation paramHeight = InputValidator.getInt(args[1],

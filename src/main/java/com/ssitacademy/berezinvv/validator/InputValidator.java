@@ -44,7 +44,7 @@ public class InputValidator {
         return result;
     }
 
-    public static boolean isContainsCountParametersArray(String[] array, int length) {
+    public static boolean isContainsCountParametersOfArray(String[] array, int length) {
         if (array.length >= length) {
             return true;
         } else {

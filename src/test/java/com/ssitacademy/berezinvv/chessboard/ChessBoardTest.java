@@ -3,29 +3,31 @@ package com.ssitacademy.berezinvv.chessboard;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ChessBoardTest {
     ChessBoard chessBoard = new ChessBoard(0, 0);
 
     @Test
-    void toStringPositiveIfParamsZero() {
+    void toStringPositiveIfParamsZeroTest() {
         String expected = "";
         assertEquals(expected, chessBoard.toString());
     }
+
     @Test
-    void toStringPositiveIfParamsNotZero() {
+    void toStringPositiveIfParamsNotZeroTest() {
         String expected = new String("*\n");
         chessBoard.setHeight(1);
         chessBoard.setWidth(1);
-        assertTrue(chessBoard.toString().equals(expected));
+        assertEquals(expected, chessBoard.toString());
     }
+
     @Test
-    void toStringPositiveIfParamsNotZeroByLenght() {
+    void toStringPositiveIfParamsNotZeroByLenghtTest() {
         int width = 5;
         int height = 12;
+        int expected = width * height + height;
         chessBoard.setHeight(height);
         chessBoard.setWidth(width);
-        assertTrue(chessBoard.toString().length() == width * height + height);
+        assertEquals(expected, chessBoard.toString().length());
     }
 }

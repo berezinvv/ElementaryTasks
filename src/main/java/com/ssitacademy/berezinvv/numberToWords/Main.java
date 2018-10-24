@@ -9,7 +9,7 @@ import static com.ssitacademy.berezinvv.numberToWords.NumberToWords.MESSAGE_INFO
 
 public class Main {
     public static void main(String[] args) {
-        if (InputValidator.isContainsCountParametersArray(args,1)) {
+        if (InputValidator.isContainsCountParametersOfArray(args,1)) {
             BigDecimalValidation param = InputValidator.getBigDecimal(args[0],
                     "Parameter ");
             if (param.isValid()) {

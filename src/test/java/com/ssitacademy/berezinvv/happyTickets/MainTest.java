@@ -4,12 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MainTest {
     @Test
-    void readFile() {
+    void readFileTest() {
         Throwable exception = assertThrows(IOException.class,
-                ()->{Main.readFile("WRONG");} );
+                () -> {
+                    Main.readFile("WRONG");
+                });
     }
 }

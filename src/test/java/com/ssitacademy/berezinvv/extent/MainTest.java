@@ -2,17 +2,22 @@ package com.ssitacademy.berezinvv.extent;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class MainTest {
-    int a = 10;
-    int b = 10;
+    int number = 10;
+    int power = 10;
+
     @Test
     void extentNewPositiveTest() {
-        assertEquals(Math.pow(a,b), Main.extentNew(a,b));
+        double expected = Math.pow(number, power);
+        assertEquals(expected, Main.extentNew(number, power));
     }
+
     @Test
     void extentNewNegativeTest() {
-        assertNotEquals(Math.pow(a,a-a), Main.extentNew(a,b));
+        double expected = Math.pow(number, number + 2);
+        assertNotEquals(expected, Main.extentNew(number, power));
     }
 }

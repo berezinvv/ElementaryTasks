@@ -6,41 +6,41 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int a = 0;
-        int b = 0;
+        int number = 0;
+        int power = 0;
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.println("Enter the number:");
-            a = scanner.nextInt();
+            number = scanner.nextInt();
 
             System.out.println("Enter the number power:");
-            b = scanner.nextInt();
+            power = scanner.nextInt();
 
-            System.out.println(extentNew(a, b));
+            System.out.println(extentNew(number, power));
 
         } catch (NumberFormatException | InputMismatchException ex) {
             System.out.println("invalid parameters");
         }
     }
 
-    public static double extentNew(int a, int b) {
+    public static double extentNew(int number, int power) {
         double res = 1;
 
-        if (a == 0) {
+        if (number == 0) {
             return 0;
         }
-        for (int i = 0; i < Math.abs(b); ) {
+        for (int i = 0; i < Math.abs(power); ) {
             if (i == 0 || i == 1) {
-                res *= a;
+                res *= number;
                 i++;
-            } else if (i * 2 <= b) {
+            } else if (i * 2 <= power) {
                 res *= res;
                 i *= 2;
             } else {
-                res = res * a;
+                res = res * number;
                 i++;
             }
         }
-        return (b > 0) ? res : 1 / res;
+        return (power > 0) ? res : 1 / res;
     }
 }

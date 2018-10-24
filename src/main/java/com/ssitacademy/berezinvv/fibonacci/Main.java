@@ -10,7 +10,7 @@ public class Main {
             "\tupper  - upper range value\n";
 
     public static void main(String[] args) {
-        if (InputValidator.isContainsCountParametersArray(args, 2)) {
+        if (InputValidator.isContainsCountParametersOfArray(args, 2)) {
 
             LongValidation paramLower = InputValidator.getLong(args[0],
                     "First parameter ");

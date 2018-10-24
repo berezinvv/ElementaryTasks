@@ -31,7 +31,7 @@ public class Main {
                 String line = scanner.nextLine();
                 array = line.split(",");
 
-                if (InputValidator.isContainsCountParametersArray(array,4)) {
+                if (InputValidator.isContainsCountParametersOfArray(array,4)) {
                     DoubleValidation paramSecond = InputValidator.getDouble(args[0],
                             "Second parameter ");
                     DoubleValidation paramThird = InputValidator.getDouble(args[1],

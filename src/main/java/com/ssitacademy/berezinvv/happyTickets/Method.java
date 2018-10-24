@@ -11,9 +11,9 @@ public enum Method implements CountTicket {
             int count = 0;
             int countByAmount = 0;
 
-            for (int i = 1; i <= 9 * this.numberdigits / 2/*9+9+9+... first half of the ticket */; i++) {
+            for (int i = 1; i <= 9 * this.getNumberdigits() / 2/*9+9+9+... first half of the ticket */; i++) {
                 //second half of the ticket
-                countByAmount = countByAmount(i, 0, this.numberdigits / 2);
+                countByAmount = countByAmount(i, 0, this.getNumberdigits() / 2);
                 count += countByAmount * countByAmount;
             }
             return count;
@@ -27,7 +27,7 @@ public enum Method implements CountTicket {
             int oddNumber = 0;
 
             List<Integer> listNumber = new ArrayList<>();
-            for (int ticket = 112; ticket < Math.pow(10, this.numberdigits); ticket++) {
+            for (int ticket = 112; ticket < Math.pow(10, this.getNumberdigits()); ticket++) {
                 int number = ticket;
 
                 listNumber.clear();
@@ -48,7 +48,7 @@ public enum Method implements CountTicket {
         }
     };
 
-    public int numberdigits = 6;
+    private int numberdigits = 6;
 
     Method() {
     }
@@ -60,9 +60,19 @@ public enum Method implements CountTicket {
                 if (a + j == i) {
                     return count + 1;
                 }
-                count += countByAmount(i, a+j, level-1);
+                count += countByAmount(i, a + j, level - 1);
             }
         }
         return count;
+    }
+
+    public int getNumberdigits() {
+        return numberdigits;
+    }
+
+    public void setNumberdigits(int numberdigits) {
+        if (numberdigits % 2 == 0) {
+            this.numberdigits = numberdigits;
+        }
     }
 }

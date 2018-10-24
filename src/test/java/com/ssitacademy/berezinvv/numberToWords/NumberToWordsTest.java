@@ -4,19 +4,21 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class NumberToWordsTest {
     @Test
-    void getNumberToWordsIfParamZero() {
+    void getNumberToWordsIfParamZeroTest() {
         assertTrue(NumberToWords.getNumberToWords(new BigDecimal(0)).contains("ноль"));
     }
+
     @Test
-    void getNumberToWordsIfParamLessThanZero() {
+    void getNumberToWordsIfParamLessThanZeroTest() {
         assertTrue(NumberToWords.getNumberToWords(new BigDecimal(-100)).contains("минус"));
     }
+
     @Test
-    void getNumberToWordsWithParamLenghtNotZero() {
-        assertTrue(NumberToWords.getNumberToWords(new BigDecimal(1030)).length()!=0);
+    void getNumberToWordsWithParamLenghtNotZeroTest() {
+        assertTrue(NumberToWords.getNumberToWords(new BigDecimal(1030)).length() != 0);
     }
 }

@@ -4,19 +4,23 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FileServiceTest {
     @Test
-    void countPoints() {
+    void countPointsTest() {
         Throwable exception = assertThrows(IOException.class,
-                ()->{FileService.countPoints("WRONG", "");} );
+                () -> {
+                    FileService.countPoints("WRONG", "");
+                });
     }
 
     @Test
-    void replaceWithStringInFile() {
+    void replaceWithStringInFileTest() {
         Throwable exception = assertThrows(IOException.class,
-                ()->{FileService.replaceWithStringInFile("WRONG", "", "");} );
+                () -> {
+                    FileService.replaceWithStringInFile("WRONG", "", "");
+                });
     }
 
 }

@@ -9,7 +9,7 @@ public class Main {
             "\tnumber - value (integer)\n";
 
     public static void main(String[] args) {
-        if (InputValidator.isContainsCountParametersArray(args,1)) {
+        if (InputValidator.isContainsCountParametersOfArray(args,1)) {
             IntValidation param = InputValidator.getInt(args[0],
                     "Parameter ");
             if (param.isValid()) {
